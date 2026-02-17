@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    working_dir: /app
+    ports:
+      - '8787:8787'
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - ./backend/data:/app/data
+    environment:
+      - PORT=8787
+      - TODO_DATA_FILE=/app/data/todos.json
+      - TODO_SEED_FILE=/app/data/todos.seed.json
+
+  frontend:
+    build:
+      context: ./frontend
+    working_dir: /app
+    depends_on:
+      - backend
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_TARGET=http://backend:8787
+      - VITE_USE_MSW=false

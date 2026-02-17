@@ -1,28 +1,25 @@
 # react-vite-sample-app
 
-フロント先行でBtoB SaaSの技術基盤を検証するためのサンプルリポジトリです。
+BtoB SaaSフロントエンド技術基盤の検証用サンプルです。現在は `frontend + backend` のローカル構成です。
 
-## 現在の構成
+## 構成
 
-- `frontend/`: React + TypeScript + Vite の実装済みアプリ
-- 将来追加予定: `backend/`（同階層に追加し、モノレポ構成へ拡張）
+- `frontend/`: React + Vite + TanStack で作ったTODO CRUD UI
+- `backend/`: Honoで作ったTODO CRUD API（JSONファイル永続化）
+- `docker-compose.yml`: frontend/backend 同時起動
 
-## frontend で採用している主な技術
+## 一括起動（推奨）
 
-- React
-- TypeScript
-- Vite
-- TanStack Router
-- TanStack Query
-- TanStack Form
-- Tailwind CSS v4
-- shadcn/ui 運用（`cva` / `clsx` / `tailwind-merge`）
-- axios
-- MSW
-- Biome
-- Vitest + Testing Library
+```bash
+docker compose up --build
+```
 
-## まず動かす
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend: [http://localhost:8787](http://localhost:8787)
+
+## 個別起動
+
+### frontend
 
 ```bash
 cd frontend
@@ -30,6 +27,16 @@ npm install
 npm run dev
 ```
 
-ブラウザ: [http://localhost:5173](http://localhost:5173)
+### backend
 
-詳細は `frontend/README.md` を参照してください。
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+## 補足
+
+- frontend は `/api` を Vite proxy で backend に転送します。
+- ブラウザ開発時の MSW は無効です（`VITE_USE_MSW=true` のときのみ有効）。
+- MSWは主にテスト用途として維持しています。

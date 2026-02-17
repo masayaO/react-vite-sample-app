@@ -14,8 +14,7 @@ TODO管理ドメインで、CRUDの実装手触りを検証するフロントエ
   - TanStack Form + zod
 - API
   - axios 共通 `apiClient`（`baseURL: /api`）
-- モックAPI
-  - MSW で `GET/POST/PATCH/DELETE /api/todos`
+  - Vite proxy経由で backend に転送
 
 ## セットアップ
 
@@ -30,6 +29,14 @@ npm run dev
 ```
 
 ブラウザ: [http://localhost:5173](http://localhost:5173)
+
+## 環境変数
+
+- `VITE_API_TARGET`（任意）
+  - 既定: `http://localhost:8787`
+- `VITE_USE_MSW`（任意）
+  - 既定: `false`
+  - `true` でブラウザMSWを有効化
 
 ## 品質チェック
 
@@ -46,17 +53,3 @@ npm run build
 - `src/shared`: APIクライアントと共通UI
 - `src/mocks`: MSWハンドラ
 - `src/test`: 統合テスト
-
-## 白画面になる場合
-
-1. devサーバーを再起動
-
-```bash
-npm run dev
-```
-
-2. ブラウザをハードリロード（macOS: `Cmd + Shift + R`）
-3. まだ表示されない場合は Service Worker を解除
-   - Chrome DevTools > Application > Service Workers > `Unregister`
-
-補足: 開発時は `public/mockServiceWorker.js` を使ってMSWを起動します。
