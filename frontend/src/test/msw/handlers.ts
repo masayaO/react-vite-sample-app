@@ -1,14 +1,42 @@
 import { delay, HttpResponse, http } from 'msw';
 
+import type { AccountInput } from '@/api/accountApi';
 import type { Todo, TodoInput } from '@/api/todoApi';
 
-import { getTodos, setTodos } from './data';
+import { getAccount, getTodos, setAccount, setTodos } from './data';
 
 function withLatency() {
   return delay(100);
 }
 
 export const handlers = [
+  http.get('/api/account', async () => {
+    await withLatency();
+    return HttpResponse.json(getAccount());
+  }),
+
+  http.patch('/api/account', async ({ request }) => {
+    await withLatency();
+
+    const payload = (await request.json()) as AccountInput;
+
+    if (payload.name === 'force-error') {
+      return HttpResponse.json(
+        { message: 'Forced API error' },
+        { status: 500 },
+      );
+    }
+
+    const nextAccount = {
+      ...getAccount(),
+      ...payload,
+      updatedAt: new Date().toISOString(),
+    };
+
+    setAccount(nextAccount);
+    return HttpResponse.json(nextAccount);
+  }),
+
   http.get('/api/todos', async ({ request }) => {
     await withLatency();
 

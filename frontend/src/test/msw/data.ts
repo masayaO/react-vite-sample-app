@@ -1,3 +1,4 @@
+import type { Account } from '@/api/accountApi';
 import type { Todo } from '@/api/todoApi';
 
 const seedTodos: Todo[] = [
@@ -23,7 +24,13 @@ const seedTodos: Todo[] = [
   },
 ];
 
+const seedAccount: Account = {
+  name: 'Sample User',
+  updatedAt: new Date('2026-02-15T09:00:00.000Z').toISOString(),
+};
+
 let todos = structuredClone(seedTodos);
+let account = structuredClone(seedAccount);
 
 export function getTodos() {
   return todos;
@@ -33,6 +40,18 @@ export function setTodos(nextTodos: Todo[]) {
   todos = nextTodos;
 }
 
+export function getAccount() {
+  return account;
+}
+
+export function setAccount(nextAccount: Account) {
+  account = nextAccount;
+}
+
 export function resetTodos() {
   todos = structuredClone(seedTodos);
+}
+
+export function resetAccount() {
+  account = structuredClone(seedAccount);
 }

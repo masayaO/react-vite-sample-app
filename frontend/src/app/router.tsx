@@ -4,36 +4,13 @@ import {
   createRootRoute,
   createRoute,
   createRouter,
-  Link,
-  Outlet,
   redirect,
 } from '@tanstack/react-router';
+import { RootLayout } from '@/app/RootLayout';
+import { AccountEditPage } from '@/routes/account/edit/page';
 import { TodoDetailPage } from '@/routes/todos/$todoId/page';
 import { TodoNewPage } from '@/routes/todos/new/page';
 import { TodosListPage } from '@/routes/todos/page';
-
-function RootLayout() {
-  return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#f0f9ff,_#f8fafc_55%)]">
-      <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
-          <h1 className="text-lg font-semibold text-slate-900">
-            Frontend CRUD Sandbox
-          </h1>
-          <Link
-            className="text-sm font-medium text-sky-700 hover:underline"
-            to="/todos"
-          >
-            Todos
-          </Link>
-        </div>
-      </header>
-      <main className="mx-auto max-w-4xl px-4 py-8">
-        <Outlet />
-      </main>
-    </div>
-  );
-}
 
 const rootRoute = createRootRoute({ component: RootLayout });
 
@@ -63,11 +40,18 @@ const todoDetailRoute = createRoute({
   component: TodoDetailPage,
 });
 
+const accountEditRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/account/edit',
+  component: AccountEditPage,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   todosRoute,
   todoNewRoute,
   todoDetailRoute,
+  accountEditRoute,
 ]);
 
 export function makeRouter(queryClient: QueryClient, history?: RouterHistory) {

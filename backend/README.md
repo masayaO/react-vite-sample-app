@@ -5,6 +5,8 @@
 ## エンドポイント
 
 - `GET /health`
+- `GET /api/account`
+- `PATCH /api/account`
 - `GET /api/todos?search=&status=`
 - `GET /api/todos/:id`
 - `POST /api/todos`
@@ -35,3 +37,5 @@ npm run build
 - 環境変数:
   - `TODO_DATA_FILE` で実データ保存先を変更可能
   - `TODO_SEED_FILE` で初期seedファイルを変更可能
+  - `ACCOUNT_DATA_FILE` でアカウント実データ保存先を変更可能
+  - `ACCOUNT_SEED_FILE` でアカウント初期seedファイルを変更可能

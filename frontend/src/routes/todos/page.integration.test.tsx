@@ -22,6 +22,34 @@ function renderApp(initialPath = '/todos') {
 }
 
 describe('todo app integration', () => {
+  test('shows account in header and navigates to account edit', async () => {
+    const user = userEvent.setup();
+    renderApp('/todos');
+
+    const accountMenu = await screen.findByText('Sample User');
+    expect(accountMenu).toBeInTheDocument();
+
+    await user.click(accountMenu);
+    await user.click(await screen.findByRole('link', { name: 'Edit account' }));
+
+    expect(
+      await screen.findByRole('heading', { name: 'Edit Account' }),
+    ).toBeInTheDocument();
+  });
+
+  test('updates account name and reflects in header', async () => {
+    const user = userEvent.setup();
+    renderApp('/account/edit');
+
+    const nameInput = await screen.findByLabelText('Name');
+    await user.clear(nameInput);
+    await user.type(nameInput, 'Masaya');
+    await user.click(screen.getByRole('button', { name: 'Save' }));
+
+    expect(await screen.findByText('Account updated.')).toBeInTheDocument();
+    expect(await screen.findByText('Masaya')).toBeInTheDocument();
+  });
+
   test('shows list and navigates to detail', async () => {
     const user = userEvent.setup();
     renderApp('/todos');
