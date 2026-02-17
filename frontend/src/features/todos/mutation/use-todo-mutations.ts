@@ -1,28 +1,12 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import {
   createTodo,
   deleteTodo,
-  fetchTodo,
-  fetchTodos,
   updateTodo,
-} from './api';
-import { todoKeys } from './keys';
-import type { TodoFilters, TodoInput } from './types';
-
-export function useTodos(filters: TodoFilters) {
-  return useQuery({
-    queryKey: todoKeys.list(filters),
-    queryFn: () => fetchTodos(filters),
-  });
-}
-
-export function useTodo(todoId: string) {
-  return useQuery({
-    queryKey: todoKeys.detail(todoId),
-    queryFn: () => fetchTodo(todoId),
-  });
-}
+} from '@/features/todos/api/todos-api';
+import type { TodoInput } from '@/features/todos/model/types';
+import { todoKeys } from '@/features/todos/query/keys';
 
 export function useCreateTodo() {
   const queryClient = useQueryClient();

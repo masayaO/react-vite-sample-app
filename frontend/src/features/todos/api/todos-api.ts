@@ -1,6 +1,9 @@
+import type {
+  Todo,
+  TodoFilters,
+  TodoInput,
+} from '@/features/todos/model/types';
 import { apiClient } from '@/shared/api/client';
-
-import type { Todo, TodoFilters, TodoInput } from './types';
 
 export async function fetchTodos(filters: TodoFilters): Promise<Todo[]> {
   const response = await apiClient.get<Todo[]>('/todos', {

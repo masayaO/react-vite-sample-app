@@ -1,4 +1,4 @@
-import type { TodoFilters } from './types';
+import type { TodoFilters } from '@/features/todos/model/types';
 
 export const todoKeys = {
   all: ['todos'] as const,

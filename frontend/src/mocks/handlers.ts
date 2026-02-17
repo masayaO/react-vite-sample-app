@@ -1,6 +1,6 @@
 import { delay, HttpResponse, http } from 'msw';
 
-import type { Todo, TodoInput } from '@/features/todos/types';
+import type { Todo, TodoInput } from '@/features/todos';
 
 import { getTodos, setTodos } from './data';
 

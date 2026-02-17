@@ -8,10 +8,9 @@ import {
   Outlet,
   redirect,
 } from '@tanstack/react-router';
-
-import { TodoDetailPage } from '@/features/todos/pages/todo-detail-page';
-import { TodoNewPage } from '@/features/todos/pages/todo-new-page';
-import { TodosListPage } from '@/features/todos/pages/todos-list-page';
+import { TodoDetailPage } from '@/routes/todos/$todoId/page';
+import { TodoNewPage } from '@/routes/todos/new/page';
+import { TodosListPage } from '@/routes/todos/page';
 
 function RootLayout() {
   return (
