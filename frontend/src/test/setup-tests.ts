@@ -2,8 +2,8 @@ import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
 import { afterAll, afterEach, beforeAll } from 'vitest';
 
-import { resetTodos } from '@/mocks/data';
-import { server } from '@/mocks/server';
+import { resetTodos } from '@/test/msw/data';
+import { server } from '@/test/msw/server';
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 afterEach(() => {

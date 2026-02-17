@@ -49,7 +49,7 @@ npm run build
 ## ディレクトリ構成（抜粋）
 
 - `src/app`: Router / App Provider
-- `src/features/todos`: TODO機能（API, Hooks, Pages, Form）
-- `src/shared`: APIクライアントと共通UI
-- `src/mocks`: MSWハンドラ
-- `src/test`: 統合テスト
+- `src/routes/todos`: TODO画面（ページ、コンポーネント、ページ用hooks、近接integration test）
+- `src/api/todoApi`: TODO APIドメイン（client, keys, queries, mutations, types, schema）
+- `src/shared`: 共通UIとユーティリティ
+- `src/test/msw`: テスト用MSWハンドラ
