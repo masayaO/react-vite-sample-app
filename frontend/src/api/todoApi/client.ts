@@ -1,5 +1,5 @@
+import { apiClient } from '@/api/httpClient';
 import type { Todo, TodoFilters, TodoInput } from '@/api/todoApi/types';
-import { apiClient } from '@/shared/api/client';
 
 export async function fetchTodos(filters: TodoFilters): Promise<Todo[]> {
   const response = await apiClient.get<Todo[]>('/todos', {
