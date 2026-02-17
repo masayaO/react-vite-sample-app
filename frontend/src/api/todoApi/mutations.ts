@@ -1,12 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-
-import {
-  createTodo,
-  deleteTodo,
-  updateTodo,
-} from '@/features/todos/api/todos-api';
-import type { TodoInput } from '@/features/todos/model/types';
-import { todoKeys } from '@/features/todos/query/keys';
+import { createTodo, deleteTodo, updateTodo } from '@/api/todoApi/client';
+import { todoKeys } from '@/api/todoApi/keys';
+import type { TodoInput } from '@/api/todoApi/types';
 
 export function useCreateTodo() {
   const queryClient = useQueryClient();

@@ -1,4 +1,4 @@
-import type { Todo } from '@/features/todos';
+import type { Todo } from '@/api/todoApi';
 
 const seedTodos: Todo[] = [
   {

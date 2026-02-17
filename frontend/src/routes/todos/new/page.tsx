@@ -1,4 +1,4 @@
-import { TodoForm } from '@/features/todos';
+import { TodoForm } from '@/routes/todos/components/TodoForm';
 import { NewTodoHeader } from '@/routes/todos/new/components/NewTodoHeader';
 import { useTodoNewPage } from '@/routes/todos/new/useTodoNewPage';
 import { Card } from '@/shared/ui/card';

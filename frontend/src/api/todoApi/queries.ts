@@ -1,8 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-
-import { fetchTodo, fetchTodos } from '@/features/todos/api/todos-api';
-import type { TodoFilters } from '@/features/todos/model/types';
-import { todoKeys } from '@/features/todos/query/keys';
+import { fetchTodo, fetchTodos } from '@/api/todoApi/client';
+import { todoKeys } from '@/api/todoApi/keys';
+import type { TodoFilters } from '@/api/todoApi/types';
 
 export function useTodos(filters: TodoFilters) {
   return useQuery({

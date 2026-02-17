@@ -1,6 +1,6 @@
 import { useNavigate } from '@tanstack/react-router';
 
-import { type TodoInput, useCreateTodo } from '@/features/todos';
+import { type TodoInput, useTodoApi } from '@/api/todoApi';
 
 const initialValues: TodoInput = {
   title: '',
@@ -11,8 +11,9 @@ const initialValues: TodoInput = {
 };
 
 export function useTodoNewPage() {
+  const todoApi = useTodoApi();
   const navigate = useNavigate();
-  const createMutation = useCreateTodo();
+  const createMutation = todoApi.useCreateTodo();
 
   const handleSubmit = async (values: TodoInput) => {
     await createMutation.mutateAsync(values);

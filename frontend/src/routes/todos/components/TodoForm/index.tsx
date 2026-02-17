@@ -1,12 +1,8 @@
 import { useForm } from '@tanstack/react-form';
 import { useMemo, useState } from 'react';
 
-import { todoInputSchema } from '@/features/todos/model/schema';
-import type {
-  TodoInput,
-  TodoPriority,
-  TodoStatus,
-} from '@/features/todos/model/types';
+import { todoInputSchema } from '@/api/todoApi/schema';
+import type { TodoInput, TodoPriority, TodoStatus } from '@/api/todoApi/types';
 import { Button } from '@/shared/ui/button';
 import { Input } from '@/shared/ui/input';
 import { Select } from '@/shared/ui/select';
