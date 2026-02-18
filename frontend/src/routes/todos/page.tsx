@@ -3,8 +3,8 @@ import { Link } from '@tanstack/react-router';
 import { TodoFilters } from '@/routes/todos/components/TodoFilters';
 import { TodosPageHeader } from '@/routes/todos/components/TodosPageHeader';
 import { useTodoListPage } from '@/routes/todos/useTodoListPage';
-import { Badge } from '@/shared/ui/badge';
-import { Card } from '@/shared/ui/card';
+import { Badge } from '@/ui/badge';
+import { Card } from '@/ui/card';
 
 export function TodosListPage() {
   const { search, setSearch, status, setStatus, todosQuery } =

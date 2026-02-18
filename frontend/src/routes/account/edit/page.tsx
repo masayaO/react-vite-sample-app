@@ -1,9 +1,9 @@
 import { Link } from '@tanstack/react-router';
 
 import { useAccountEditPage } from '@/routes/account/edit/useAccountEditPage';
-import { Button } from '@/shared/ui/button';
-import { Card } from '@/shared/ui/card';
-import { Input } from '@/shared/ui/input';
+import { Button } from '@/ui/button';
+import { Card } from '@/ui/card';
+import { Input } from '@/ui/input';
 
 export function AccountEditPage() {
   const {

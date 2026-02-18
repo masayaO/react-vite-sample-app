@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react';
 
-import { cn } from '@/shared/utils/utils';
+import { cn } from '@/utils/utils';
 
 const statusClassName: Record<string, string> = {
   todo: 'bg-slate-200 text-slate-700',

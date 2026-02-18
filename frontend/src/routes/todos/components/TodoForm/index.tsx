@@ -3,10 +3,10 @@ import { useMemo, useState } from 'react';
 
 import { todoInputSchema } from '@/api/todoApi/schema';
 import type { TodoInput, TodoPriority, TodoStatus } from '@/api/todoApi/types';
-import { Button } from '@/shared/ui/button';
-import { Input } from '@/shared/ui/input';
-import { Select } from '@/shared/ui/select';
-import { Textarea } from '@/shared/ui/textarea';
+import { Button } from '@/ui/button';
+import { Input } from '@/ui/input';
+import { Select } from '@/ui/select';
+import { Textarea } from '@/ui/textarea';
 
 type TodoFormProps = {
   initialValues: TodoInput;

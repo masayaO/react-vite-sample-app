@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react';
 
-import { cn } from '@/shared/utils/utils';
+import { cn } from '@/utils/utils';
 
 export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (

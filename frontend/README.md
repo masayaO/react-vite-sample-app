@@ -53,5 +53,6 @@ npm run build
 - `src/routes/todos`: TODO画面（ページ、コンポーネント、ページ用hooks、近接integration test）
 - `src/api/todoApi`: TODO APIドメイン（client, keys, queries, mutations, types, schema）
 - `src/api/accountApi`: Account APIドメイン（client, keys, queries, mutations, types, schema）
-- `src/shared`: 共通UIとユーティリティ
+- `src/ui`: 共通UIコンポーネント
+- `src/utils`: 共通ユーティリティ
 - `src/test/msw`: テスト用MSWハンドラ

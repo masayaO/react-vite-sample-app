@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from 'react';
 
-import { cn } from '@/shared/utils/utils';
+import { cn } from '@/utils/utils';
 
 export function Input({
   className,

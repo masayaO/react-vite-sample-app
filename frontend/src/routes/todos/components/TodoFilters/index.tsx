@@ -2,8 +2,8 @@ import {
   type TodoFiltersFormValues,
   todoStatusOptions,
 } from '@/routes/todos/todoFiltersSchema';
-import { Input } from '@/shared/ui/input';
-import { Select } from '@/shared/ui/select';
+import { Input } from '@/ui/input';
+import { Select } from '@/ui/select';
 
 type TodoFiltersProps = {
   search: TodoFiltersFormValues['search'];

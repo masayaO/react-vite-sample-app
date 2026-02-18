@@ -1,7 +1,7 @@
 import { TodoForm } from '@/routes/todos/components/TodoForm';
 import { NewTodoHeader } from '@/routes/todos/new/components/NewTodoHeader';
 import { useTodoNewPage } from '@/routes/todos/new/useTodoNewPage';
-import { Card } from '@/shared/ui/card';
+import { Card } from '@/ui/card';
 
 export function TodoNewPage() {
   const { createMutation, handleSubmit, initialValues } = useTodoNewPage();

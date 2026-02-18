@@ -1,8 +1,8 @@
 import { TodoDetailHeader } from '@/routes/todos/$todoId/components/TodoDetailHeader';
 import { useTodoDetailPage } from '@/routes/todos/$todoId/useTodoDetailPage';
 import { TodoForm } from '@/routes/todos/components/TodoForm';
-import { Button } from '@/shared/ui/button';
-import { Card } from '@/shared/ui/card';
+import { Button } from '@/ui/button';
+import { Card } from '@/ui/card';
 
 export function TodoDetailPage() {
   const {
