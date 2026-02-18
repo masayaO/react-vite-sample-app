@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
 
-import { useAccountEditPage } from '@/routes/account/edit/useAccountEditPage';
+import { useAccountEditPage } from '@/features/account/edit/useAccountEditPage';
 import { Button } from '@/ui/button';
 import { Card } from '@/ui/card';
 import { Input } from '@/ui/input';

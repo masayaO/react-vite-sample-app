@@ -49,8 +49,9 @@ npm run build
 
 ## ディレクトリ構成（抜粋）
 
-- `src/app`: Router / App Provider
-- `src/routes/todos`: TODO画面（ページ、コンポーネント、ページ用hooks、近接integration test）
+- `src/routes`: TanStack Router の file-based route 定義（`routeTree.gen.ts` は自動生成）
+- `src/features/todos`: TODO画面（ページ、コンポーネント、ページ用hooks、integration test）
+- `src/features/account`: Account画面（ページ、ページ用hooks、integration test）
 - `src/api/todoApi`: TODO APIドメイン（client, keys, queries, mutations, types, schema）
 - `src/api/accountApi`: Account APIドメイン（client, keys, queries, mutations, types, schema）
 - `src/ui`: 共通UIコンポーネント

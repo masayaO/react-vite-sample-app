@@ -1,7 +1,7 @@
 import {
   type TodoFiltersFormValues,
   todoStatusOptions,
-} from '@/routes/todos/todoFiltersSchema';
+} from '@/features/todos/todoFiltersSchema';
 import { Input } from '@/ui/input';
 import { Select } from '@/ui/select';
 

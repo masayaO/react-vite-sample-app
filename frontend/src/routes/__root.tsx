@@ -1,7 +1,16 @@
-import { Link, Outlet } from '@tanstack/react-router';
+import type { QueryClient } from '@tanstack/react-query';
+import {
+  createRootRouteWithContext,
+  Link,
+  Outlet,
+} from '@tanstack/react-router';
 import { CircleUserRound } from 'lucide-react';
 
 import { useAccountApi } from '@/api/accountApi';
+
+interface RouterContext {
+  queryClient: QueryClient;
+}
 
 function AccountMenu() {
   const accountApi = useAccountApi();
@@ -27,7 +36,7 @@ function AccountMenu() {
   );
 }
 
-export function RootLayout() {
+function RootLayout() {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#f0f9ff,_#f8fafc_55%)]">
       <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -52,3 +61,7 @@ export function RootLayout() {
     </div>
   );
 }
+
+export const Route = createRootRouteWithContext<RouterContext>()({
+  component: RootLayout,
+});

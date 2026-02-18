@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { useTodoApi } from '@/api/todoApi';
-import type { TodoFiltersFormValues } from '@/routes/todos/todoFiltersSchema';
+import type { TodoFiltersFormValues } from '@/features/todos/todoFiltersSchema';
 
 export function useTodoListPage() {
   const todoApi = useTodoApi();

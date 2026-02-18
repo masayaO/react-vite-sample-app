@@ -1,7 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
   "files": {
-    "includes": ["**", "!dist", "!coverage", "!public/mockServiceWorker.js"]
+    "includes": [
+      "**",
+      "!dist",
+      "!coverage",
+      "!public/mockServiceWorker.js",
+      "!src/routeTree.gen.ts"
+    ]
   },
   "formatter": {
     "enabled": true,

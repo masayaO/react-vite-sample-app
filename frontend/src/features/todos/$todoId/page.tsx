@@ -1,6 +1,6 @@
-import { TodoDetailHeader } from '@/routes/todos/$todoId/components/TodoDetailHeader';
-import { useTodoDetailPage } from '@/routes/todos/$todoId/useTodoDetailPage';
-import { TodoForm } from '@/routes/todos/components/TodoForm';
+import { useTodoDetailPage } from '@/features/todos/$todoId/useTodoDetailPage';
+import { TodoDetailHeader } from '@/features/todos/components/TodoDetailHeader';
+import { TodoForm } from '@/features/todos/components/TodoForm';
 import { Button } from '@/ui/button';
 import { Card } from '@/ui/card';
 

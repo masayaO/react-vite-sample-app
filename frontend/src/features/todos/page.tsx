@@ -1,8 +1,8 @@
 import { Link } from '@tanstack/react-router';
 
-import { TodoFilters } from '@/routes/todos/components/TodoFilters';
-import { TodosPageHeader } from '@/routes/todos/components/TodosPageHeader';
-import { useTodoListPage } from '@/routes/todos/useTodoListPage';
+import { TodoFilters } from '@/features/todos/components/TodoFilters';
+import { TodosPageHeader } from '@/features/todos/components/TodosPageHeader';
+import { useTodoListPage } from '@/features/todos/useTodoListPage';
 import { Badge } from '@/ui/badge';
 import { Card } from '@/ui/card';
 

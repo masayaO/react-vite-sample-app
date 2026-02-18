@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, test } from 'vitest';
 
-import { makeRouter } from '@/app/router';
+import { makeRouter } from '@/router';
 
 function renderApp(initialPath = '/account/edit') {
   const queryClient = new QueryClient();

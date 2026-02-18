@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
 
-import { useTodoDetailHeader } from '@/routes/todos/$todoId/components/TodoDetailHeader/useTodoDetailHeader';
+import { useTodoDetailHeader } from '@/features/todos/components/TodoDetailHeader/useTodoDetailHeader';
 
 export function TodoDetailHeader() {
   const { backTo } = useTodoDetailHeader();
